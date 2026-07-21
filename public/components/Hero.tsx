@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hero = () => {
   return (
-    <div className="">
+    <div className="bg-secondary py-10 px-5">
       
     </div>
   )
