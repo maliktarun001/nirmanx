@@ -11,7 +11,7 @@ const Paragraph: React.FC<ParagraphProps> = ({
 }) => {
   return (
     <p
-      className={`${className} ${align === "center" ? "text-center mx-auto" : align === "right" ? "text-right" : "text-left"} text-white/80 font-normal font-barlow leading-[150%] text-sm sm:text-base`}
+      className={`${className} ${align === "center" ? "text-center mx-auto" : align === "right" ? "text-right" : "text-left"} text-white/80 font-normal leading-[150%] text-sm sm:text-base`}
     >
       {children}
     </p>

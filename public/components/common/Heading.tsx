@@ -11,7 +11,7 @@ const Heading: React.FC<HeadingProps> = ({
 }) => {
   return (
     <h2
-      className={`${className} ${align === "center" ? "text-center mx-auto" : align === "right" ? "text-right" : "text-left"} text-white font-semibold font-barlow leading-[120%] text-3xl lg:text-4xl`}
+      className={`${className} ${align === "center" ? "text-center mx-auto" : align === "right" ? "text-right" : "text-left"} text-white font-semibold leading-120 text-[28px] lg:text-4xl xl:custom-lg`}
     >
       {children}
     </h2>
