@@ -7,7 +7,7 @@ interface ButtonProps {
   className?: string;
   type?: "button" | "submit" | "reset";
   href?: string;
-  variant?: "primary" | "secondary";
+   variant?: "primary" | "secondary" | "yellow" | "outline";
   showArrow?: boolean;
 }
 
@@ -25,6 +25,10 @@ const Cta: React.FC<ButtonProps> = ({
       "bg-blue text-white before:bg-white hover:text-blue border-blue",
     secondary:
       "bg-white text-black-secondary before:bg-blue hover:text-white border-white hover:border-blue",
+      yellow:
+"bg-yellow text-black-secondary border-yellow before:bg-white hover:text-black-secondary",
+outline:
+"bg-transparent text-white border-white before:bg-white hover:text-blue",
   };
 
   const baseClasses = `
