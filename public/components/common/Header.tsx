@@ -44,7 +44,7 @@ return()=>{
           ))}
         </div>
         <div className="flex gap-10 items-center">
-<div className="gap-10 items-center hidden lg:flex"><button className="cursor-pointer font-bold text-blue text-base leading-normal bg-transparent py-2 px-3 lg:flex hidden">Sign In</button>
+<div className="gap-10 items-center hidden lg:flex"><Link href="/sign-in" className="cursor-pointer font-bold text-blue text-base leading-normal bg-transparent py-2 px-3 lg:flex hidden">Sign In</Link>
           <Cta>Get Started</Cta></div>
            <button
               onClick={() => setNav(!nav)}
