@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Icons from '@/public/components/common/Icons'
 import Cta from '../common/Cta'
 
 interface AuthCardProps {
@@ -12,6 +13,15 @@ const AuthCard = ({ mode }: AuthCardProps) => {
   return (
     <div className="min-h-screen bg-[#EBF0F5] flex items-center justify-center px-4">
       <div className="bg-white rounded-2xl shadow-md w-full max-w-125 p-8 md:p-10">
+
+        {/* Back button */}
+        <Link
+          href="/"
+          className="inline-flex items-center gap-1.5 text-sm font-bold text-blue transition-colors mb-6 group"
+        >
+          <Icons icon="arrowRight" className="w-4 h-4 rotate-180 group-hover:-translate-x-0.5 transition-transform" />
+          Back
+        </Link>
 
         {/* Title */}
         <h1 className="text-2xl font-bold text-text-primary mb-1">
