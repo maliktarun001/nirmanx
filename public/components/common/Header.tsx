@@ -32,8 +32,8 @@ return()=>{
           />
         </Link>
         <div className={`${nav ? "left-0" : "-left-full"} flex gap-8 lg:flex-row flex-col items-center justify-center max-lg:fixed max-lg:top-0 max-lg:min-h-screen max-lg:w-full max-lg:h-full max-lg:z-50 max-lg:bg-white transition-all duration-300`}>
-          {NAV_LINKS.map((obj) => (
-            <div key={obj.link}>
+          {NAV_LINKS.map((obj,i) => (
+            <div key={i}>
               <Link onClick={()=>setNav(!nav)}
                 href={obj.link}
                 className="text-lg lg:text-base font-bold text-text-primary relative  after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-text-primary after:transition-all after:duration-300 hover:after:w-full"

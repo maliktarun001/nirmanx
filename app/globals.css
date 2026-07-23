@@ -3,18 +3,21 @@
 @theme {
   --color-blue: #1F62E8;
   --color-secondary-blue: #3983D4;
+  --color-dark-blue:#002F8D;
   --color-text-primary: #101010;
   --color-black-secondary: #272727;
   --color-success: #13AD57;
-  --color-background: #F3F4F6;
+  --color-off-gray: #F3F4F6;
   --color-yellow: #FCC800;
   --color-brand-light-blue: #3983D4;
   --color-gray:#4A5565;
+  --color-slate:#364153;
   --color-off-white:#FBFBFB;
   --color-dark-blue:#4F39F6;
   --text-custom-lg:42px;
   --text-custom-xl: 52px;
   --leading-120:120%;
+  --leading-130:130%;
 }
 body {
     font-family: "Inter", sans-serif;
