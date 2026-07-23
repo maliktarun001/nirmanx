@@ -31,7 +31,7 @@ return()=>{
             className="w-full max-w-24 lg:max-w-31.75 lg:h-11.5 object-contain"
           />
         </Link>
-        <div className={`${nav ? "left-0" : "-left-full"} flex gap-8 lg:flex-row flex-col items-center justify-center max-lg:fixed max-lg:top-0 max-lg:min-h-screen max-lg:w-full max-lg:h-full max-lg:z-50 max-lg:bg-white transition-all duration-300`}>
+        <div className={`${nav ? "left-0" : "-left-full"} flex gap-6 lg:gap-8 lg:flex-row flex-col items-center justify-center max-lg:fixed max-lg:top-0 max-lg:min-h-screen max-lg:w-full max-lg:h-full max-lg:z-50 max-lg:bg-white transition-all duration-300`}>
           {NAV_LINKS.map((obj,i) => (
             <div key={i}>
               <Link onClick={()=>setNav(!nav)}
@@ -42,6 +42,8 @@ return()=>{
               </Link>
             </div>
           ))}
+          <div className="gap-6 flex items-center flex-col lg:hidden"><Link href="/sign-in" className="cursor-pointer font-bold text-blue text-base leading-normal bg-transparent py-2 px-3">Sign In</Link>
+          <Cta>Get Started</Cta></div>
         </div>
         <div className="flex gap-10 items-center">
 <div className="gap-10 items-center hidden lg:flex"><Link href="/sign-in" className="cursor-pointer font-bold text-blue text-base leading-normal bg-transparent py-2 px-3 lg:flex hidden">Sign In</Link>

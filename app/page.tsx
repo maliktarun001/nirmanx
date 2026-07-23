@@ -6,7 +6,6 @@ import Hero from "@/public/components/Hero";
 import LearningPlatform from "@/public/components/LearningPlatform";
 import PricingPlans from "@/public/components/PricingPlans";
 import TrustedEducators from "@/public/components/TrustedEducators";
-import Image from "next/image";
 
 export default function Home() {
   return (
