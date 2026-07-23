@@ -1,6 +1,7 @@
 import ChooseYourPath from "@/public/components/ChooseYourPath";
 import ExploreTemplets from "@/public/components/ExploreTemplets";
 import Footer from "@/public/components/Footer";
+import FrequentlyAskedQuestions from "@/public/components/FrequentlyAskedQuestions";
 import Hero from "@/public/components/Hero";
 import LearningPlatform from "@/public/components/LearningPlatform";
 import PricingPlans from "@/public/components/PricingPlans";
@@ -15,6 +16,7 @@ export default function Home() {
      <ChooseYourPath/>
      <ExploreTemplets/>
      <PricingPlans/>
+     <FrequentlyAskedQuestions/>
      <TrustedEducators/>
      <Footer/>
     </div>
