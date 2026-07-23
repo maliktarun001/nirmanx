@@ -81,3 +81,77 @@ export const TESTIMONIALS_CARDS_LIST = [
       "I went from zero experience to building my first circuit in 10 minutes. The tutorials are incredible.",
   },
 ];
+export type ButtonVariant =
+  | "primary"
+  | "secondary"
+  | "yellow"
+  | "outline"
+  | "outlineBlack";
+
+export interface PricingPlan {
+  id: number;
+  title: string;
+  description: string;
+  price: string;
+  duration: string;
+  features: string[];
+  buttonText: string;
+  variant: ButtonVariant;
+  popular: boolean;
+  badge?: string;
+}
+
+export const PRICING_PLANS: PricingPlan[] = [
+  {
+    id: 1,
+    title: "Free",
+    description: "Perfect for getting started.",
+    price: "$0",
+    duration: "Forever",
+    features: [
+      "5 projects",
+      "50+ templates",
+      "Basic export",
+      "Community support",
+      "Autosave",
+    ],
+    buttonText: "Start Free",
+    variant: "outlineBlack",
+    popular: false,
+  },
+  {
+    id: 2,
+    title: "Pro",
+    description: "For serious creators & makers",
+    price: "$12",
+    duration: "Per Month",
+    features: [
+      "Unlimited projects",
+      "All templates",
+      "Advanced export",
+      "Priority support",
+      "Collaboration",
+    ],
+    buttonText: "Go Pro",
+    variant: "primary",
+    popular: true,
+    badge: "Popular",
+  },
+  {
+    id: 3,
+    title: "Education",
+    description: "For schools & classrooms",
+    price: "$4",
+    duration: "Per Student/Month",
+    features: [
+      "Student accounts",
+      "Assignment tracking",
+      "Admin dashboard",
+      "COPPA compliant",
+      "Autosave",
+    ],
+    buttonText: "Contact Sales",
+    variant: "outlineBlack",
+    popular: false,
+  },
+];

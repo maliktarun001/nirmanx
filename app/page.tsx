@@ -3,6 +3,7 @@ import ExploreTemplets from "@/public/components/ExploreTemplets";
 import Footer from "@/public/components/Footer";
 import Hero from "@/public/components/Hero";
 import LearningPlatform from "@/public/components/LearningPlatform";
+import PricingPlans from "@/public/components/PricingPlans";
 import TrustedEducators from "@/public/components/TrustedEducators";
 import Image from "next/image";
 
@@ -13,6 +14,7 @@ export default function Home() {
      <LearningPlatform/>
      <ChooseYourPath/>
      <ExploreTemplets/>
+     <PricingPlans/>
      <TrustedEducators/>
      <Footer/>
     </div>

@@ -7,7 +7,7 @@ interface ButtonProps {
   className?: string;
   type?: "button" | "submit" | "reset";
   href?: string;
-   variant?: "primary" | "secondary" | "yellow" | "outline";
+   variant?: "primary" | "secondary" | "yellow" | "outline" | "outlineBlack";
   showArrow?: boolean;
 }
 
@@ -29,7 +29,9 @@ const Cta: React.FC<ButtonProps> = ({
 "bg-yellow text-black-secondary border-yellow before:bg-white hover:text-black-secondary",
 outline:
 "bg-transparent text-white border-white before:bg-white hover:text-blue",
-  };
+  outlineBlack:
+    "bg-white text-black-secondary border-black before:bg-black hover:text-white",
+};
 
   const baseClasses = `
     relative inline-flex items-center gap-2
