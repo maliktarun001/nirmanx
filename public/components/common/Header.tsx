@@ -36,7 +36,7 @@ return()=>{
             <div key={i}>
               <Link onClick={()=>setNav(!nav)}
                 href={obj.link}
-                className="text-lg lg:text-base font-bold text-text-primary relative  after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-text-primary after:transition-all after:duration-300 hover:after:w-full"
+                className="text-lg lg:text-base font-bold text-text-primary relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-text-primary after:transition-all after:duration-300 hover:after:w-full"
               >
                 {obj.label}
               </Link>

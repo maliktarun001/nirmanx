@@ -30,7 +30,7 @@ const Footer = () => {
               <div className="flex gap-4 sm:gap-5 flex-wrap">
                 {FOOTER_LINKS_LIST.map((obj, i) => (
                   <Link
-                    className="text-yellow text-sm sm:text-base font-medium leading-none"
+                    className="text-yellow text-sm sm:text-base font-medium leading-none relative after:absolute after:-bottom-1 after:left-1/2 after:-translate-x-1/2 after:w-0 after:h-0.5 after:bg-yellow after:transition-all after:duration-300 hover:after:w-full"
                     key={i}
                     href={obj.href}
                   >
@@ -47,8 +47,8 @@ const Footer = () => {
             </Paragraph>
             <form>
               <div className="space-x-4 flex lg:flex-row max-sm:flex-wrap max-sm:gap-3">
-                <input type="email" placeholder="Email" className="text-gray placeholder:text-gray text-base font-medium placeholder:font-medium py-3 px-3.5 bg-white rounded-[10px]" />
-                <Cta showArrow variant="yellow" className="rounded-[10px]! px-4! text-nowrap!">
+                <input required type="email" placeholder="Email" className="text-gray placeholder:text-gray text-base font-medium placeholder:font-medium py-3 px-3.5 bg-white rounded-[10px] outline-0" />
+                <Cta type="submit" showArrow variant="yellow" className="rounded-[10px]! px-4! text-nowrap!">
                   Sign Up
                 </Cta>
               </div>
