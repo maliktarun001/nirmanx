@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import Icons from '@/public/components/common/Icons'
 import Cta from '../common/Cta'
@@ -9,6 +10,40 @@ interface AuthCardProps {
 
 const AuthCard = ({ mode }: AuthCardProps) => {
   const isSignIn = mode === 'sign-in'
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: ""
+  })
+  const handleChange = async (e: any) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    })
+  }
+  const handleSubmit = async (e: any) => {
+    e.preventDefault();
+    // console.log(formData)
+    try {
+      const res = await fetch("http://localhost:5000/api/auth/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body:JSON.stringify(formData),
+      })
+      const data  = await res.json();
+      if (res.ok) {
+        alert("signup successfully")
+        console.log(data)
+      } else{
+        alert(data.message)
+      }
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-[#EBF0F5] flex items-center justify-center px-4">
@@ -29,11 +64,11 @@ const AuthCard = ({ mode }: AuthCardProps) => {
         </h1>
         <p className="text-gray text-sm mb-6">
           {isSignIn
-            ? 'Welcome back! Enter your mobile number'
+            ? 'Welcome back! Enter your credentials'
             : 'Create your account to get started'}
         </p>
 
-        <div className="space-y-5">
+        <form onSubmit={handleSubmit} className="space-y-5">
 
           {/* Full Name — sign up only */}
           {!isSignIn && (
@@ -42,6 +77,9 @@ const AuthCard = ({ mode }: AuthCardProps) => {
                 Full Name
               </label>
               <input
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 type="text"
                 placeholder="Enter your full name"
                 className="w-full border border-gray/30 rounded-xl px-4 py-3 text-sm text-text-primary placeholder:text-gray/60 outline-none focus:border-blue transition-colors"
@@ -49,49 +87,41 @@ const AuthCard = ({ mode }: AuthCardProps) => {
             </div>
           )}
 
-          {/* Email — sign up only */}
-          {!isSignIn && (
-            <div>
-              <label className="block text-sm font-medium text-text-primary mb-1.5">
-                Email Address
-              </label>
-              <input
-                type="email"
-                placeholder="Enter your email address"
-                className="w-full border border-gray/30 rounded-xl px-4 py-3 text-sm text-text-primary placeholder:text-gray/60 outline-none focus:border-blue transition-colors"
-              />
-            </div>
-          )}
-
-          {/* Mobile Number */}
+          {/* Email — all modes */}
           <div>
             <label className="block text-sm font-medium text-text-primary mb-1.5">
-              Mobile Number
+              Email Address
             </label>
-            <div className="flex gap-2 flex-wrap">
-              {/* Country code */}
-              <div className="flex items-center gap-1.5 border border-gray/30 rounded-xl px-3 py-3 text-sm font-medium text-text-primary bg-white max-sm:justify-between max-[420px]:w-full sm:min-w-22.5">
-                <span className="text-base leading-none">🇮🇳</span>
-                <div className='flex items-center gap-2'>
-                <span>+91</span>
-                <svg className="w-3 h-3 text-gray mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
-                </svg></div>
-              </div>
+            <input
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              placeholder="Enter your email address"
+              className="w-full border border-gray/30 rounded-xl px-4 py-3 text-sm text-text-primary placeholder:text-gray/60 outline-none focus:border-blue transition-colors"
+            />
+          </div>
 
-              {/* Number input */}
-              <input
-                type="tel"
-                placeholder="Enter mobile number"
-                className="flex-1 border border-gray/30 rounded-xl px-4 py-3 text-sm text-text-primary placeholder:text-gray/60 outline-none focus:border-blue transition-colors"
-              />
-            </div>
-            <p className="mt-2 text-xs text-gray">We&apos;ll send an OTP to verify</p>
+          {/* Password — all modes */}
+          <div>
+            <label className="block text-sm font-medium text-text-primary mb-1.5">
+              Password
+            </label>
+            <input
+              name="password"
+              type="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Enter your password"
+              className="w-full border border-gray/30 rounded-xl px-4 py-3 text-sm text-text-primary placeholder:text-gray/60 outline-none focus:border-blue transition-colors"
+            />
           </div>
 
           {/* Submit */}
-          <Cta className='w-full! rounded-xl! justify-center!'>  Send OTP</Cta>
-        </div>
+          <Cta type='submit' className='w-full! rounded-xl! justify-center!'>
+            {isSignIn ? 'Sign In' : 'Sign Up'}
+          </Cta>
+        </form>
 
         {/* Footer link */}
         <p className="text-center text-sm text-gray mt-5">
