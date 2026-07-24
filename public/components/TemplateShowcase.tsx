@@ -1,8 +1,10 @@
+'use client'
 import Image from 'next/image'
 import Heading from './common/Heading'
 import Paragraph from './common/Paragraph'
 import Cta from './common/Cta'
 import Icons from './common/Icons'
+import { useState } from 'react'
 
 interface TemplateCard {
   id: number
@@ -91,6 +93,14 @@ const categories = [
 ]
 
 const TemplateShowcase = () => {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+const filteredTemplates =
+  selectedCategory === "All"
+    ? templates
+    : templates.filter(
+        (template) => template.category === selectedCategory
+      );
   return (
     <div className='bg-success py-15 sm:py-20 lg:py-25 px-5'>
       <div className='max-w-308 mx-auto'>
@@ -105,30 +115,27 @@ const TemplateShowcase = () => {
         </div>
         <div className='flex flex-wrap justify-center gap-3 mb-10'>
           {categories.map((category) => (
-            <button
+            <button onClick={()=> setSelectedCategory(category.name)}
               key={category.name}
-              className={`px-5 py-2.5 rounded-full text-sm font-medium transition-all ${
-                category.active
-                  ? 'bg-yellow text-text-primary shadow-md'
-                  : 'bg-white text-black hover:bg-yellow backdrop-blur-sm'
-              }`}
+              className={`px-5 py-2.5 cursor-pointer rounded-full text-sm font-medium transition-all ${
+        selectedCategory === category.name
+          ? "bg-yellow text-text-primary shadow-md"
+          : "bg-white text-black hover:bg-yellow"
+      }`}
             >
               {category.name}
             </button>
           ))}
         </div>
         <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-10'>
-          {templates.map((template) => (
+          {filteredTemplates.map((template) => (
             <div
               key={template.id}
               className='bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow cursor-pointer group'
             >
-              <div className='relative h-50 bg-gray-100 overflow-hidden'>
-                <div className='w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100'>
-                  <div className='w-full h-full p-1 flex items-center justify-center'>
-                   <Image src={template.image} alt="images" width={285} height={211}/>
-                  </div>
-                </div>
+                  <div className='w-full p-1 flex items-center justify-center'>
+                   <Image src={template.image} alt="images" width={285} height={211} className='w-full h-auto'/>
+                 
               </div>
               <div className='p-4'>
                 <p className={`text-xs font-semibold mb-1.5 ${template.categoryColor}`}>
