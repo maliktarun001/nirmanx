@@ -155,3 +155,30 @@ export const PRICING_PLANS: PricingPlan[] = [
     popular: false,
   },
 ];
+export const FAQ_DATA_LIST = [
+  {
+    question: "Is Inventa really free?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id pharetra eros, in rhoncus velit.",
+  },
+  {
+    question: "Is Inventa really free?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id pharetra eros, in rhoncus velit.",
+  },
+  {
+    question: "What export formats are supported?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id pharetra eros, in rhoncus velit.",
+  },
+  {
+    question: "Can I use Inventa in my classroom?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id pharetra eros, in rhoncus velit.",
+  },
+  {
+    question: "Can I use Inventa in my classroom?",
+    answer:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id pharetra eros, in rhoncus velit.",
+  },
+];

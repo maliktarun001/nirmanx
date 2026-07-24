@@ -5,6 +5,7 @@ import FrequentlyAskedQuestions from "@/public/components/FrequentlyAskedQuestio
 import Hero from "@/public/components/Hero";
 import LearningPlatform from "@/public/components/LearningPlatform";
 import PricingPlans from "@/public/components/PricingPlans";
+import TemplateShowcase from "@/public/components/TemplateShowcase";
 import TrustedEducators from "@/public/components/TrustedEducators";
 
 export default function Home() {
@@ -13,9 +14,10 @@ export default function Home() {
      <Hero/>
      <LearningPlatform/>
      <ChooseYourPath/>
-     <ExploreTemplets/>
+     <TemplateShowcase/>
      <PricingPlans/>
      <FrequentlyAskedQuestions/>
+      <ExploreTemplets/>
      <TrustedEducators/>
      <Footer/>
     </div>
