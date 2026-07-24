@@ -182,3 +182,78 @@ export const FAQ_DATA_LIST = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus id pharetra eros, in rhoncus velit.",
   },
 ];
+interface TemplateCard {
+  id: number;
+  title: string;
+  category: string;
+  duration: string;
+  image: string;
+  categoryColor: string;
+}
+
+const templates: TemplateCard[] = [
+  {
+    id: 1,
+    title: "LED Circuit Basics",
+    category: "Electronics",
+    duration: "5 min",
+    image: "/assets/images/webp/electronic-item-1.webp",
+    categoryColor: "text-green-600",
+  },
+  {
+    id: 2,
+    title: "My First 3D House",
+    category: "3D",
+    duration: "15 min",
+    image: "/assets/images/webp/3d-item.webp",
+    categoryColor: "text-blue",
+  },
+  {
+    id: 3,
+    title: "Simple Robot Arm",
+    category: "Projects",
+    duration: "30 min",
+    image: "/assets/images/webp/project-1.webp",
+    categoryColor: "text-teal-600",
+  },
+  {
+    id: 4,
+    title: "Solar System Model",
+    category: "Classroom",
+    duration: "15 min",
+    image: "/assets/images/webp/classroom.webp",
+    categoryColor: "text-orange-500",
+  },
+  {
+    id: 5,
+    title: "Traffic Light Sim",
+    category: "Electronics",
+    duration: "5 min",
+    image: "/assets/images/webp/electronics-item-2.webp",
+    categoryColor: "text-green-600",
+  },
+  {
+    id: 6,
+    title: "Geometric Art",
+    category: "Beginner",
+    duration: "10 min",
+    image: "/assets/images/webp/begineer-item-2.webp",
+    categoryColor: "text-cyan-600",
+  },
+  {
+    id: 7,
+    title: "Bridge Engineering",
+    category: "Projects",
+    duration: "5 min",
+    image: "/assets/images/webp/project-2.webp",
+    categoryColor: "text-teal-600",
+  },
+  {
+    id: 8,
+    title: "Dice Roller Game",
+    category: "Beginner",
+    duration: "8 min",
+    image: "/assets/images/webp/begineer-item-2.webp",
+    categoryColor: "text-cyan-600",
+  },
+];
